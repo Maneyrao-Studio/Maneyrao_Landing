@@ -34,21 +34,18 @@ export function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="text-5xl md:text-7xl lg:text-9xl font-bold tracking-tighter mb-8 text-gradient"
+          className="text-3xl md:text-7xl lg:text-6xl font-bold tracking-tighter mb-4 text-gradient"
         >
-          Digital
-          <br />
-          Alchemy
+           Creamos tu web y sistemas mejorando tu día a día profesional
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-          className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
+          className="text-sm md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          We transform complex ideas into fluid, intuitive digital experiences. 
-          Blending art, technology, and strategy to shape the future.
+          Maneyrao Studio se enfoca en brindar claridad,  ayudar a exponer e integrar sistemas que se adapten y optimicen tu forma de trabajar.
         </motion.p>
 
         <motion.div
