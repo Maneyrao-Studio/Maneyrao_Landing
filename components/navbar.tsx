@@ -16,10 +16,10 @@ export function Navbar() {
   })
 
   const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Trabajo", href: "#work" },
+    { name: "Servicios", href: "#services" },
+    { name: "Acerca de", href: "#about" },
+    { name: "Contacto", href: "#contact" },
   ]
 
   return (
@@ -54,7 +54,8 @@ export function Navbar() {
             </Link>
           ))}
           <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
-            Let's Talk
+            
+            ¡Hablemos!
           </button>
         </div>
 

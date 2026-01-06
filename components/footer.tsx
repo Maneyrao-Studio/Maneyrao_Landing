@@ -10,7 +10,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-20">
           <div>
             <Link href="/" className="text-2xl font-bold tracking-tighter mb-6 block">
-              Lumina<span className="text-blue-400">.</span>
+              Maneyro<span className="text-blue-400">.</span>
             </Link>
             <p className="text-white/50 leading-relaxed">
               Crafting digital experiences that merge art, technology, and human connection.
