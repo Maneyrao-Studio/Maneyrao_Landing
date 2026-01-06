@@ -13,33 +13,30 @@ export function Footer() {
               Maneyro<span className="text-blue-400">.</span>
             </Link>
             <p className="text-white/50 leading-relaxed">
-              Crafting digital experiences that merge art, technology, and human connection.
+              Creamos tu web y sistemas mejorando tu día a día profesional
             </p>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6">Sitemap</h4>
+            <h4 className="font-semibold mb-6">Secciones</h4>
             <ul className="space-y-4 text-white/60">
-              <li><Link href="#work" className="hover:text-white transition-colors">Work</Link></li>
-              <li><Link href="#services" className="hover:text-white transition-colors">Services</Link></li>
-              <li><Link href="#about" className="hover:text-white transition-colors">About</Link></li>
-              <li><Link href="#contact" className="hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="/#work" className="hover:text-white transition-colors">Trabajo</Link></li>
+              <li><Link href="/#services" className="hover:text-white transition-colors">Servicios</Link></li>
+              <li><Link href="/about" className="hover:text-white transition-colors">Acerca de</Link></li>
+              <li><Link href="/#contact" className="hover:text-white transition-colors">Contacto</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6">Socials</h4>
+            <h4 className="font-semibold mb-6">Redes</h4>
             <ul className="space-y-4 text-white/60">
               <li><Link href="#" className="hover:text-white transition-colors">Instagram</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Twitter</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">LinkedIn</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Dribbble</Link></li>
             </ul>
           </div>
           
           <div>
-            <h4 className="font-semibold mb-6">Let's Chat</h4>
-            <p className="text-white/60 mb-4">Have a project in mind?</p>
+            <h4 className="font-semibold mb-6">¡Hablemos!</h4>
+            <p className="text-white/60 mb-4">¿Que tienes en mente?</p>
             <a 
               href="mailto:hello@lumina.agency" 
               className="text-xl font-medium hover:text-blue-400 transition-colors"

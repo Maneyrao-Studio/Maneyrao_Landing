@@ -16,10 +16,10 @@ export function Navbar() {
   })
 
   const navLinks = [
-    { name: "Trabajo", href: "#work" },
-    { name: "Servicios", href: "#services" },
+    { name: "Trabajo", href: "/#work" },
+    { name: "Servicios", href: "/#services" },
     { name: "Acerca de", href: "/about" },
-    { name: "Contacto", href: "#contact" },
+    { name: "Contacto", href: "/#contact" },
   ]
 
   return (
