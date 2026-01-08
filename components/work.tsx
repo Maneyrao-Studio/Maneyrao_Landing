@@ -3,25 +3,36 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link" // Importar Link si quieres usar la URL
 
 const projects = [
   {
-    title: "Neon Finance",
-    category: "Fintech App",
-    image: "/neon-finance-app-interface-dark-mode.jpg",
+    title: "Club Amsterdam",
+    category: "Demo: Sistema de Resrvas",
+    description: "Sistema de reservas personalizado desarrollado como alternativa a plataformas genéricas y costosas.",
+    image: "/projects/club-amsterdam.jpg",
+    slug: "club-amsterdam",
+    demoUrl: "https://demo-booking-five.vercel.app/",
+    // AGREGA ESTO: Clases de color para el gradiente
+    color: "from-yellow-500/20 to-orange-500/20", 
+  },
+  {
+    title: "Lic. Seguridad Marítima",
+    category: "Landing Page",
+    description: "Landing page profesional orientada a presentación de servicios y conversión de contactos.",
+    image: "/projects/seguridad-maritima.jpg",
+    slug: "seguridad-maritima",
+    demoUrl: "https://ruizvictor.vercel.app/",
     color: "from-blue-500/20 to-cyan-500/20",
   },
   {
-    title: "Aura Health",
-    category: "Wellness Platform",
-    image: "/meditation-app-interface-soft-gradients.jpg",
-    color: "from-purple-500/20 to-pink-500/20",
-  },
-  {
-    title: "Orbit Space",
-    category: "Aerospace Website",
-    image: "/space-website-interface-futuristic.jpg",
-    color: "from-orange-500/20 to-red-500/20",
+    title: "Gestor de Tareas",
+    category: "Plataforma de Productividad",
+    description: "Plataforma integral de gestión de tareas con más de 15 funciones personalizables.",
+    image: "/projects/task-platform.jpg",
+    slug: "task-platform",
+    demoUrl: "https://cm-boar.netlify.app/board/1",
+    color: "from-emerald-500/20 to-green-500/20",
   },
 ]
 
@@ -71,37 +82,45 @@ export function Work() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <GlassCard className="p-0 overflow-hidden group">
-                <div className="grid md:grid-cols-2 gap-0">
-                  <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
-                    <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                    <div className="relative z-10">
-                      <span className="text-sm font-medium text-white/50 mb-4 block uppercase tracking-wider">
-                        {project.category}
-                      </span>
-                      <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                        {project.title}
-                      </h3>
-                      <p className="text-white/70 mb-8 max-w-md">
-                        Redefining the user experience through intuitive design and seamless interactions.
-                      </p>
-                      <div className="flex items-center gap-4 text-sm font-medium">
-                        <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">UX/UI</span>
-                        <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">Development</span>
+              {/* Sugerencia: Envolver en Link si quieres que sea clicable */}
+              <Link href={project.demoUrl} target="_blank">
+                <GlassCard className="p-0 overflow-hidden group cursor-pointer">
+                  <div className="grid md:grid-cols-2 gap-0">
+                    <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
+                      {/* CORRECCIÓN 1: project.color ahora existe */}
+                      <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
+                      
+                      <div className="relative z-10">
+                        <span className="text-sm font-medium text-white/50 mb-4 block uppercase tracking-wider">
+                          {project.category}
+                        </span>
+                        <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
+                          {project.title}
+                        </h3>
+                        
+                        {/* CORRECCIÓN 2: Usar la descripción dinámica */}
+                        <p className="text-white/70 mb-8 max-w-md">
+                          {project.description}
+                        </p>
+                        
+                        <div className="flex items-center gap-4 text-sm font-medium">
+                          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">UX/UI</span>
+                          <span className="px-4 py-2 rounded-full bg-white/5 border border-white/10">Development</span>
+                        </div>
                       </div>
                     </div>
+                    <div className="relative h-[400px] md:h-auto overflow-hidden">
+                      <Image
+                        src={project.image || "/placeholder.svg"}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                      <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+                    </div>
                   </div>
-                  <div className="relative h-[400px] md:h-auto overflow-hidden">
-                    <Image
-                      src={project.image || "/placeholder.svg"}
-                      alt={project.title}
-                      fill
-                      className="object-cover transition-transform duration-700 group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
-                  </div>
-                </div>
-              </GlassCard>
+                </GlassCard>
+              </Link>
             </motion.div>
           ))}
         </div>
