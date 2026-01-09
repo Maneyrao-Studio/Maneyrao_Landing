@@ -7,23 +7,23 @@ import { Code2, Palette, Rocket, Smartphone } from 'lucide-react'
 const services = [
   {
     icon: <Palette className="w-8 h-8 text-blue-400" />,
-    title: "Brand Identity",
-    description: "Crafting visual systems that speak louder than words. We build brands that resonate and endure.",
+    title: "Escuchamos antes de construir",
+    description: "Queremos que, al terminar el proyecto, sientas que te entendieron. Que tu idea tomó forma y que ahora trabajás más cómodo, con mayor claridad y orden en tu día a día.",
   },
   {
     icon: <Smartphone className="w-8 h-8 text-purple-400" />,
-    title: "Digital Product",
-    description: "User-centric interfaces designed for clarity and delight. From mobile apps to complex dashboards.",
+    title: "Soluciones personalizadas",
+    description: "No imponemos sistemas ni usamos soluciones genéricas.Adaptamos cada web o sistema a la persona que lo va a usar y a su forma real de trabajar.",
   },
   {
     icon: <Code2 className="w-8 h-8 text-indigo-400" />,
-    title: "Development",
-    description: "Clean, scalable code that powers your vision. We build robust solutions using cutting-edge tech.",
+    title: "Orden y claridad",
+    description: "Cuando los procesos son claros y el sistema acompaña, el trabajo se vuelve más simple y más llevadero lo que se traduce en más dinero",
   },
   {
     icon: <Rocket className="w-8 h-8 text-pink-400" />,
-    title: "Growth Strategy",
-    description: "Data-driven insights to scale your digital presence. We help you reach and engage your audience.",
+    title: "Codo a codo",
+    description: "Nuestro valor está en entender profundamente el problema y transformarlo en un sistema cómodo. Queremos que, una vez finalizado, mejores tus ingresos y que estes tan feliz que sea inevitable recomendarnos, de manera que crecemos JUNTOS..",
   },
 ]
 
