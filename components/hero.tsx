@@ -1,9 +1,12 @@
 "use client"
 
+import { useIsContactOpen } from "@/app/hooks/isContactOpenAtom"
 import { motion } from "framer-motion"
 import { ArrowRight } from 'lucide-react'
 
 export function Hero() {
+  const [, setIsContactOpen] = useIsContactOpen()
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
       {/* Background Liquid Elements */}
@@ -60,7 +63,7 @@ export function Hero() {
             </span>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
-          <button className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
+          <button onClick={() => setIsContactOpen(true)} className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
             Agenda una llamada GRATIS
           </button>
         </motion.div>

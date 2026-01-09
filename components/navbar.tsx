@@ -1,14 +1,16 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X } from 'lucide-react'
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { useIsContactOpen } from "@/app/hooks/isContactOpenAtom"
 
 export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [, setIsContactOpen] = useIsContactOpen()
   const { scrollY } = useScroll()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
@@ -53,7 +55,7 @@ export function Navbar() {
               {link.name}
             </Link>
           ))}
-          <button className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
+          <button onClick={() => setIsContactOpen(true)} className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-white/90 transition-colors">
             
             ¡Hablemos!
           </button>
