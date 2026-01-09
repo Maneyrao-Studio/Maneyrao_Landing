@@ -36,7 +36,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-3xl md:text-7xl lg:text-6xl font-bold tracking-tighter mb-4 text-gradient"
         >
-           Creamos tu web y sistemas mejorando tu día a día profesional
+           Creamos webs y sistemas que ordenan tu trabajo y mejoran tu día a día
         </motion.h1>
 
         <motion.p
@@ -45,7 +45,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-sm md:text-xl text-white/60 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          Maneyrao Studio se enfoca en brindar claridad,  ayudar a exponer e integrar sistemas que se adapten y optimicen tu forma de trabajar.
+          Ayudamos a profesionales y estudios chicos a trabajar más claros, más ordenados y con herramientas pensadas para ellos.
         </motion.p>
 
         <motion.div
@@ -61,7 +61,7 @@ export function Hero() {
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
           <button className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
-            Contactanos
+            Agenda una llamada GRATIS
           </button>
         </motion.div>
       </div>

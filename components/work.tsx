@@ -51,7 +51,7 @@ export function Work() {
               viewport={{ once: true }}
               className="text-4xl md:text-6xl font-bold mb-6"
             >
-              Selected Work
+              ¿En qué estamos trabajando?
             </motion.h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
@@ -60,7 +60,7 @@ export function Work() {
               transition={{ delay: 0.1 }}
               className="text-xl text-white/60 max-w-md"
             >
-              A showcase of our most recent digital transformations.
+              Los proyectos en los que estamos trabajando actualmente!
             </motion.p>
           </div>
           <motion.button
