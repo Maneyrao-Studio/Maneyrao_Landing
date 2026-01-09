@@ -25,14 +25,14 @@ export default function HomeClient() {
       <section id="contact" className="py-32 relative">
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-            Ready to shape <br />
-            <span className="text-gradient">the future?</span>
+            ¿Listo para mejorar<br />
+            <span className="text-gradient"> tu día a día?</span>
           </h2>
           <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
-            Let's collaborate to build something extraordinary. Your vision, our expertise.
+            Colaboremos para crear algo extraordinario. Tu visión, nuestra experiencia.
           </p>
           <button onClick={() => setIsContactOpen(true)} className="px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
-            ¡Comenzemos un proyecto!
+            ¡Comencemos un proyecto!
           </button>
         </div>
         
