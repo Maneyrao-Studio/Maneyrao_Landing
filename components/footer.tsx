@@ -38,7 +38,7 @@ export function Footer() {
             <h4 className="font-semibold mb-6">¡Hablemos!</h4>
             <p className="text-white/60 mb-4">¿qué tenes en mente?</p>
             <a 
-              href="mailto:hello@lumina.agency" 
+              href="mailto:maneyrao.studio@gmail.com" 
               className="text-xl font-medium hover:text-blue-400 transition-colors"
             >
               maneyrao.studio@gmail.com
