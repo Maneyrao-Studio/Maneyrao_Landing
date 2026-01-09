@@ -36,12 +36,12 @@ export function Footer() {
           
           <div>
             <h4 className="font-semibold mb-6">¡Hablemos!</h4>
-            <p className="text-white/60 mb-4">¿Que tienes en mente?</p>
+            <p className="text-white/60 mb-4">¿qué tenes en mente?</p>
             <a 
               href="mailto:hello@lumina.agency" 
               className="text-xl font-medium hover:text-blue-400 transition-colors"
             >
-              hello@lumina.agency
+              maneyrao.studio@gmail.com
             </a>
           </div>
         </div>
