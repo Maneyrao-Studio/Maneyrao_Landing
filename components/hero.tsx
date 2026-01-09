@@ -3,7 +3,6 @@
 import { useIsContactOpen } from "@/app/hooks/isContactOpenAtom"
 import { motion } from "framer-motion"
 import { ArrowRight } from 'lucide-react'
-import Link from "next/link"
 
 export function Hero() {
   const [, setIsContactOpen] = useIsContactOpen()
@@ -59,9 +58,9 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105">
-            <Link href="#work" className="relative z-10 flex items-center gap-2">
+            <a href="#work" className="relative z-10 flex items-center gap-2">
               Nuestro Trabajo <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            </a>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
           <button onClick={() => setIsContactOpen(true)} className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">
