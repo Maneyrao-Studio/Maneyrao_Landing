@@ -1,13 +1,22 @@
+"use client"
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
 import { Work } from "@/components/work"
 import { Footer } from "@/components/footer"
+import { ContactModal } from "@/components/ContactDialog"
+import { useIsContactOpen } from "../hooks/isContactOpenAtom"
 
-export default function Home() {
+export default function HomeClient() {
+  const [isContactOpen, setIsContactOpen] = useIsContactOpen()
   return (
     <main className="min-h-screen bg-black text-white selection:bg-blue-500/30">
       <Navbar />
+      <ContactModal 
+        isOpen={isContactOpen} 
+        onClose={() => setIsContactOpen(false)} 
+        whatsappNumber="5491112345678"
+      />
       <Hero />
       <Services />
       <Work />
@@ -22,8 +31,8 @@ export default function Home() {
           <p className="text-xl text-white/60 mb-12 max-w-2xl mx-auto">
             Let's collaborate to build something extraordinary. Your vision, our expertise.
           </p>
-          <button className="px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
-            Start a Project
+          <button onClick={() => setIsContactOpen(true)} className="px-10 py-5 bg-white text-black rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)]">
+            ¡Comenzemos un proyecto!
           </button>
         </div>
         
