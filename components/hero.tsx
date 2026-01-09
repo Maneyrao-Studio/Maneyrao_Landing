@@ -3,6 +3,7 @@
 import { useIsContactOpen } from "@/app/hooks/isContactOpenAtom"
 import { motion } from "framer-motion"
 import { ArrowRight } from 'lucide-react'
+import Link from "next/link"
 
 export function Hero() {
   const [, setIsContactOpen] = useIsContactOpen()
@@ -39,7 +40,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
           className="text-3xl md:text-7xl lg:text-6xl font-bold tracking-tighter mb-4 text-gradient"
         >
-           Creamos webs y sistemas que ordenan tu trabajo y mejoran tu día a día
+           Creamos webs y sistemas que ordenan tu trabajo y mejorar tu día a día
         </motion.h1>
 
         <motion.p
@@ -58,9 +59,9 @@ export function Hero() {
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <button className="group relative px-8 py-4 bg-white text-black rounded-full font-semibold text-lg overflow-hidden transition-all hover:scale-105">
-            <span className="relative z-10 flex items-center gap-2">
+            <Link href="/#work" className="relative z-10 flex items-center gap-2">
               Nuestro Trabajo <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-            </span>
+            </Link>
             <div className="absolute inset-0 bg-gradient-to-r from-blue-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
           </button>
           <button onClick={() => setIsContactOpen(true)} className="px-8 py-4 glass rounded-full font-semibold text-lg text-white hover:bg-white/10 transition-all hover:scale-105">

@@ -30,7 +30,7 @@ export function Footer() {
           <div>
             <h4 className="font-semibold mb-6">Redes</h4>
             <ul className="space-y-4 text-white/60">
-              <li><Link href="#" className="hover:text-white transition-colors">Instagram</Link></li>
+              <li><Link href="https://www.instagram.com/maneyrao.studio/" className="hover:text-white transition-colors">Instagram</Link></li>
             </ul>
           </div>
           

@@ -8,7 +8,7 @@ import Link from "next/link" // Importar Link si quieres usar la URL
 const projects = [
   {
     title: "Club Amsterdam",
-    category: "Demo: Sistema de Resrvas",
+    category: "Demo: Sistema de Reservas",
     description: "Sistema de reservas personalizado desarrollado como alternativa a plataformas genéricas y costosas.",
     image: "/projects/club-amsterdam.webp",
     slug: "club-amsterdam",
@@ -63,14 +63,14 @@ export function Work() {
               Los proyectos en los que estamos trabajando actualmente!
             </motion.p>
           </div>
-          <motion.button
+          {/* <motion.button
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             className="px-6 py-3 rounded-full border border-white/20 hover:bg-white/10 transition-colors text-sm font-medium"
           >
             View All Projects
-          </motion.button>
+          </motion.button> */}
         </div>
 
         <div className="space-y-20">

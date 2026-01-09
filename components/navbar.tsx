@@ -19,7 +19,7 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Trabajo", href: "/#work" },
-    { name: "Nuesra visión", href: "/#services" },
+    { name: "Nuestra visión", href: "/#services" },
     { name: "Acerca de", href: "/about" },
     { name: "Contacto", href: "/#contact" },
   ]
