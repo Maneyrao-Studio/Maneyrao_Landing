@@ -1,6 +1,5 @@
 "use client"
 
-import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { GlassCard } from "@/components/ui/glass-card"
@@ -8,6 +7,7 @@ import { motion } from "framer-motion"
 import { Heart, Target, Users, Sparkles, ArrowRight, Check, X } from "lucide-react"
 
 import { ContactModal } from "@/components/ContactDialog"
+import { useIsContactOpen } from "../hooks/isContactOpenAtom"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -25,7 +25,7 @@ const values = [
 const benefits = ["Más claridad", "Más orden", "Mejor exposición de su trabajo", "Procesos más cómodos y funcionales"]
 
 export default function AboutClient() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useIsContactOpen()
 
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 text-white/80">
