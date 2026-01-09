@@ -19,7 +19,7 @@ interface ContactModalProps {
   whatsappNumber?: string
 }
 
-export const ContactModal = ({ isOpen, onClose, whatsappNumber = "0000000" }: ContactModalProps) => {
+export const ContactModal = ({ isOpen, onClose, whatsappNumber = "5491169004497" }: ContactModalProps) => {
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",

@@ -1,29 +1,34 @@
 "use client"
 
+import Link from "next/link"
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
-import { Code2, Palette, Rocket, Smartphone } from 'lucide-react'
+import { Code2, Palette, Rocket, Smartphone } from "lucide-react"
 
 const services = [
   {
     icon: <Palette className="w-8 h-8 text-blue-400" />,
     title: "Escuchamos antes de construir",
-    description: "Queremos que, al terminar el proyecto, sientas que te entendieron. Que tu idea tomó forma y que ahora trabajás más cómodo, con mayor claridad y orden en tu día a día.",
+    description:
+      "Queremos que, al terminar el proyecto, sientas que te entendieron. Que tu idea tomó forma y que ahora trabajás más cómodo, con mayor claridad y orden en tu día a día.",
   },
   {
     icon: <Smartphone className="w-8 h-8 text-purple-400" />,
     title: "Soluciones personalizadas",
-    description: "No imponemos sistemas ni usamos soluciones genéricas.Adaptamos cada web o sistema a la persona que lo va a usar y a su forma real de trabajar.",
+    description:
+      "No imponemos sistemas ni usamos soluciones genéricas.Adaptamos cada web o sistema a la persona que lo va a usar y a su forma real de trabajar.",
   },
   {
     icon: <Code2 className="w-8 h-8 text-indigo-400" />,
     title: "Orden y claridad",
-    description: "Cuando los procesos son claros y el sistema acompaña, el trabajo se vuelve más simple y más llevadero lo que se traduce en más dinero",
+    description:
+      "Cuando los procesos son claros y el sistema acompaña, el trabajo se vuelve más simple y más llevadero lo que se traduce en más dinero📈💰",
   },
   {
     icon: <Rocket className="w-8 h-8 text-pink-400" />,
     title: "Codo a codo",
-    description: "Nuestro valor está en entender profundamente el problema y transformarlo en un sistema cómodo. Queremos que, una vez finalizado, mejores tus ingresos y que estes tan feliz que sea inevitable recomendarnos, de manera que crecemos JUNTOS..",
+    description:
+      "Nuestro valor está en entender profundamente el problema y transformarlo en un sistema cómodo. Queremos que, una vez finalizado, mejores tus ingresos y que estes tan feliz que sea inevitable recomendarnos, de manera que crecemos juntos💪🏼💪🏼",
   },
 ]
 
@@ -62,12 +67,21 @@ export function Services() {
                   <div className="mb-6 p-4 rounded-2xl bg-white/5 w-fit group-hover:bg-white/10 transition-colors">
                     {service.icon}
                   </div>
-                  <h3 className="text-2xl font-semibold mb-4">{service.title}</h3>
-                  <p className="text-white/60 leading-relaxed">{service.description}</p>
+                  <h3 className="text-2xl font-semibold mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed">
+                    {service.description}
+                  </p>
                 </div>
-                <div className="mt-8 flex items-center gap-2 text-sm font-medium text-white/40 group-hover:text-white transition-colors">
-                  Learn more <div className="w-4 h-[1px] bg-current transition-all group-hover:w-8" />
-                </div>
+
+                <Link
+                  href="/about"
+                  className="mt-8 flex items-center gap-2 text-sm font-medium text-white/40 group-hover:text-white transition-colors"
+                >
+                  Conocer más
+                  <div className="w-4 h-[1px] bg-current transition-all group-hover:w-8" />
+                </Link>
               </GlassCard>
             </motion.div>
           ))}

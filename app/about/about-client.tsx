@@ -1,10 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import { Heart, Target, Users, Sparkles, ArrowRight, Check, X } from "lucide-react"
+
+// ✅ CORRECCIÓN: El archivo en tu árbol se llama ContactDialog
+import { ContactModal } from "@/components/ContactDialog"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 30 },
@@ -13,43 +17,25 @@ const fadeInUp = {
 }
 
 const values = [
-  {
-    icon: <Heart className="w-6 h-6" />,
-    title: "Entendemos a la persona antes que al sistema",
-    color: "text-pink-accent",
-  },
-  {
-    icon: <Target className="w-6 h-6" />,
-    title: "Diseñamos soluciones personalizadas, no genéricas",
-    color: "text-primary",
-  },
-  {
-    icon: <Sparkles className="w-6 h-6" />,
-    title: "Ordenamos procesos y mejoramos la exposición",
-    color: "text-purple-accent",
-  },
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: "Trabajamos con cercanía, empatía y trato directo",
-    color: "text-indigo-accent",
-  },
+  { icon: <Heart className="w-6 h-6" />, title: "Entendemos a la persona antes que al sistema", color: "text-pink-accent" },
+  { icon: <Target className="w-6 h-6" />, title: "Diseñamos soluciones personalizadas, no genéricas", color: "text-primary" },
+  { icon: <Sparkles className="w-6 h-6" />, title: "Ordenamos procesos y mejoramos la exposición", color: "text-purple-accent" },
+  { icon: <Users className="w-6 h-6" />, title: "Trabajamos con cercanía, empatía y trato directo", color: "text-indigo-accent" },
 ]
 
-const benefits = [
-  "Más claridad",
-  "Más orden",
-  "Mejor exposición de su trabajo",
-  "Procesos más cómodos y funcionales",
-]
+const benefits = ["Más claridad", "Más orden", "Mejor exposición de su trabajo", "Procesos más cómodos y funcionales"]
 
 export default function AboutClient() {
+  // ✅ Estado para controlar el formulario
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
   return (
     <main className="min-h-screen bg-background text-foreground selection:bg-primary/30 text-white/80">
       <Navbar />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background Blobs */}
+        {/* Background Blobs - Mantenidos exactamente igual */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-primary/20 rounded-full blur-[120px] animate-blob" />
           <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-purple-accent/20 rounded-full blur-[120px] animate-blob animation-delay-2000" />
@@ -75,10 +61,20 @@ export default function AboutClient() {
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-6 text-gradient">
               Nosotros
             </h1>
-            <p className="text-xl text-muted-foreground leading-relaxed">
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10">
               Creemos en tecnología pensada para personas reales. No en soluciones frías, 
               sino en sistemas que se adaptan a tu forma de trabajar.
             </p>
+
+            <div className="flex justify-center gap-4">
+               {/* ✅ Botón del Hero ahora abre el Modal */}
+               <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 text-white font-medium backdrop-blur-sm hover:scale-105"
+               >
+                  Agenda una llamada GRATIS
+               </button>
+            </div>
           </motion.div>
         </div>
       </section>
@@ -107,10 +103,7 @@ export default function AboutClient() {
               </p>
             </motion.div>
 
-            <motion.div
-              {...fadeInUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
-            >
+            <motion.div {...fadeInUp} transition={{ duration: 0.6, delay: 0.2 }}>
               <GlassCard className="relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/20 to-transparent rounded-full blur-2xl" />
                 <blockquote className="text-2xl font-medium leading-relaxed relative z-10">
@@ -128,10 +121,6 @@ export default function AboutClient() {
 
       {/* How We Work Section */}
       <section className="py-20 relative">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-indigo-accent/10 rounded-full blur-[150px]" />
-        </div>
-
         <div className="container mx-auto px-6 relative z-10">
           <motion.div {...fadeInUp} className="text-center mb-16">
             <span className="text-sm font-medium text-primary uppercase tracking-wider mb-4 block">
@@ -179,18 +168,9 @@ export default function AboutClient() {
                   <h3 className="text-2xl font-bold">Lo que no hacemos</h3>
                 </div>
                 <ul className="space-y-4 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    No tratamos a nadie como un número
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    No usamos soluciones genéricas ni plantillas
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />
-                    No creemos en la falta de personalización
-                  </li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />No tratamos a nadie como un número</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />No usamos soluciones genéricas ni plantillas</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-red-400 mt-2 flex-shrink-0" />No creemos en la falta de personalización</li>
                 </ul>
               </GlassCard>
             </motion.div>
@@ -204,18 +184,9 @@ export default function AboutClient() {
                   <h3 className="text-2xl font-bold">A quién ayudamos</h3>
                 </div>
                 <ul className="space-y-4 text-muted-foreground">
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
-                    Profesionales independientes y estudios chicos
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
-                    Personas buenas en lo que hacen, pero desorganizadas
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />
-                    Quienes no tienen una landing que los represente bien
-                  </li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />Profesionales independientes y estudios chicos</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />Personas buenas en lo que hacen, pero desorganizadas</li>
+                  <li className="flex items-start gap-3"><span className="w-1.5 h-1.5 rounded-full bg-green-400 mt-2 flex-shrink-0" />Quienes no tienen una landing que los represente bien</li>
                 </ul>
               </GlassCard>
             </motion.div>
@@ -258,7 +229,7 @@ export default function AboutClient() {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Values Section & CTA FINAL */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-purple-accent/15 rounded-full blur-[120px] animate-blob animation-delay-4000" />
@@ -291,26 +262,38 @@ export default function AboutClient() {
             ))}
           </div>
 
-          {/* CTA */}
           <motion.div
             {...fadeInUp}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mt-16"
+            className="text-center mt-24"
           >
-            <GlassCard className="inline-block">
-              <p className="text-xl font-semibold mb-4">
-                Nuestro mayor valor está en entender profundamente el problema y 
-                transformarlo en un sistema cómodo para quien lo usa.
-              </p>
-              <p className="text-muted-foreground">
+            <GlassCard className="inline-block max-w-3xl py-12 px-8">
+              <h3 className="text-3xl font-bold mb-6">¿Hablamos de tu proyecto?</h3>
+              <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
                 Trabajamos con empatía, cercanía y una fuerte humanización del proceso.
+                Sin compromiso, solo una charla para ver si podemos ayudarte.
               </p>
+              
+              {/* ✅ Botón final ahora también abre el Modal */}
+              <button 
+                onClick={() => setIsModalOpen(true)}
+                className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition-transform duration-200 shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]"
+              >
+                Agenda una llamada GRATIS
+              </button>
             </GlassCard>
           </motion.div>
         </div>
       </section>
 
       <Footer />
+
+      {/* ✅ Renderizamos el componente que me pasaste */}
+      <ContactModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+        whatsappNumber="541112345678" // <-- Pon tu número real aquí
+      />
     </main>
   )
 }
