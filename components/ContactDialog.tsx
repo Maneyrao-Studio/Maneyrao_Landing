@@ -52,7 +52,7 @@ export const ContactModal = ({ isOpen, onClose, whatsappNumber = "5491169004497"
       return
     }
 
-    const message = `*Nuevo contacto desde el sitio web*%0A%0A*Nombre:* ${encodeURIComponent(formData.nombre)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Teléfono:* ${encodeURIComponent(formData.numero)}%0A*Asunto:* ${encodeURIComponent(formData.asunto)}`
+    const message = `*Nuevo contacto desde el sitio web*%0A%0A*Nombre:* ${encodeURIComponent(formData.nombre)}%0AEmail: ${encodeURIComponent(formData.email)}%0ATeléfono: ${encodeURIComponent(formData.numero)}%0A%0A*Asunto:* ${encodeURIComponent(formData.asunto)}`
     
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`
     window.open(whatsappUrl, "_blank")
