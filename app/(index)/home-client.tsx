@@ -15,7 +15,6 @@ export default function HomeClient() {
       <ContactModal 
         isOpen={isContactOpen} 
         onClose={() => setIsContactOpen(false)} 
-        whatsappNumber="5491112345678"
       />
       <Hero />
       <Services />
