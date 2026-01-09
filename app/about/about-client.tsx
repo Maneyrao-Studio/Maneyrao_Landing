@@ -32,7 +32,16 @@ export default function AboutClient() {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative pt-42 pb-40 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src="/about-hero.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-50 blur-xs"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
+        </div>
+
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-primary/20 rounded-full blur-[120px] animate-blob" />
           <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-purple-accent/20 rounded-full blur-[120px] animate-blob animation-delay-2000" />
@@ -126,27 +135,35 @@ export default function AboutClient() {
               Cómo trabajamos
             </h2>
           </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { step: "01", title: "Escuchamos", desc: "Nos tomamos el tiempo de entender cómo trabajás hoy, cómo es tu rutina y dónde se te complica." },
-              { step: "02", title: "Analizamos", desc: "A partir de eso analizamos, sugerimos cambios y recién después proponemos soluciones." },
-              { step: "03", title: "Implementamos", desc: "Creamos sistemas adaptados a tu forma de trabajar, no al revés." },
-            ].map((item, index) => (
-              <motion.div
+          <div className="max-h-[50rem] flex flex-col lg:flex-row gap-8 items-stretch">
+            <div className="w-full min-h-0 lg:w-1/2 flex-shrink-0 overflow-hidden rounded-lg">
+              <img
+                src="/about-who.webp"
+                alt="Background"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col justify-between flex-1 gap-6">
+              {[
+                { step: "01", title: "Escuchamos", desc: "Nos tomamos el tiempo de entender cómo trabajás hoy, cómo es tu rutina y dónde se te complica." },
+                { step: "02", title: "Analizamos", desc: "A partir de eso analizamos, sugerimos cambios y recién después proponemos soluciones." },
+                { step: "03", title: "Implementamos", desc: "Creamos sistemas adaptados a tu forma de trabajar, no al revés." },
+              ].map((item, index) => (
+                <motion.div
                 key={index}
                 {...fadeInUp}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <GlassCard className="h-full group">
-                  <span className="text-6xl font-bold text-gradient-blue opacity-50 group-hover:opacity-100 transition-opacity">
-                    {item.step}
-                  </span>
-                  <h3 className="text-2xl font-semibold mt-4 mb-3">{item.title}</h3>
-                  <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
-                </GlassCard>
-              </motion.div>
-            ))}
+                >
+                  <GlassCard className="h-full group">
+                    <span className="text-6xl font-bold text-gradient-blue opacity-50 group-hover:opacity-100 transition-opacity">
+                      {item.step}
+                    </span>
+                    <h3 className="text-2xl font-semibold mt-4 mb-3">{item.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{item.desc}</p>
+                  </GlassCard>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -227,8 +244,13 @@ export default function AboutClient() {
 
       {/* Values Section & CTA FINAL */}
       <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute bottom-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-purple-accent/15 rounded-full blur-[120px] animate-blob animation-delay-4000" />
+        <div className="absolute inset-0 overflow-hidden">
+          <img 
+            src="/about-hero.webp" 
+            alt="Background" 
+            className="w-full h-full object-cover opacity-50 blur-xs"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/80 to-background" />
         </div>
 
         <div className="container mx-auto px-6 relative z-10">
