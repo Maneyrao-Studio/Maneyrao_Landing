@@ -7,7 +7,6 @@ import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import { Heart, Target, Users, Sparkles, ArrowRight, Check, X } from "lucide-react"
 
-// ✅ CORRECCIÓN: El archivo en tu árbol se llama ContactDialog
 import { ContactModal } from "@/components/ContactDialog"
 
 const fadeInUp = {
@@ -26,7 +25,6 @@ const values = [
 const benefits = ["Más claridad", "Más orden", "Mejor exposición de su trabajo", "Procesos más cómodos y funcionales"]
 
 export default function AboutClient() {
-  // ✅ Estado para controlar el formulario
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
@@ -35,7 +33,6 @@ export default function AboutClient() {
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 overflow-hidden">
-        {/* Background Blobs - Mantenidos exactamente igual */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-primary/20 rounded-full blur-[120px] animate-blob" />
           <div className="absolute bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-purple-accent/20 rounded-full blur-[120px] animate-blob animation-delay-2000" />
@@ -67,7 +64,6 @@ export default function AboutClient() {
             </p>
 
             <div className="flex justify-center gap-4">
-               {/* ✅ Botón del Hero ahora abre el Modal */}
                <button 
                   onClick={() => setIsModalOpen(true)}
                   className="px-8 py-4 rounded-full bg-white/5 border border-white/10 hover:bg-white/10 transition-all duration-300 text-white font-medium backdrop-blur-sm hover:scale-105"
@@ -274,7 +270,6 @@ export default function AboutClient() {
                 Sin compromiso, solo una charla para ver si podemos ayudarte.
               </p>
               
-              {/* ✅ Botón final ahora también abre el Modal */}
               <button 
                 onClick={() => setIsModalOpen(true)}
                 className="px-8 py-4 rounded-full bg-white text-black font-semibold hover:scale-105 transition-transform duration-200 shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)]"
@@ -288,11 +283,9 @@ export default function AboutClient() {
 
       <Footer />
 
-      {/* ✅ Renderizamos el componente que me pasaste */}
       <ContactModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)} 
-        whatsappNumber="541112345678" // <-- Pon tu número real aquí
       />
     </main>
   )
