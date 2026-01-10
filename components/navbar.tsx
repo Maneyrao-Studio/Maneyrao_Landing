@@ -22,17 +22,40 @@ export function Navbar() {
     { name: "Contacto", href: "#contact" },
   ]
 
-  const handleMobileLinkClick = (href: string) => {
-    setIsMobileMenuOpen(false)
-    
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (href.startsWith('#')) {
+      e.preventDefault()
+      
+      if (window.location.pathname !== '/') {
+        window.location.href = '/' + href
+        return
+      } 
+
       const element = document.querySelector(href)
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' })
       }
-    } else {
-      window.location.href = href
     }
+  }
+
+  const handleMobileLinkClick = (href: string) => {
+    setIsMobileMenuOpen(false)
+    
+    if (href.startsWith('#')) {
+      if (window.location.pathname !== '/') {
+        window.location.href = '/' + href
+        return;
+      } 
+
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' })
+      }
+
+      return;
+    } 
+    
+    window.location.href = href
   }
 
   return (
@@ -57,6 +80,7 @@ export function Navbar() {
               <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
                 className="text-sm font-medium text-white/70 hover:text-white transition-colors"
               >
                 {link.name}
